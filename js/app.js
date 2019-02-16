@@ -1,5 +1,24 @@
 'use strict';
 
+console.log('verify');
+
+hours = [
+  '6am',
+  '7am',
+  '8am',
+  '9am',
+  '10am',
+  '11am',
+  '12pm',
+  '1pm',
+  '2pm',
+  '3pm',
+  '4pm',
+  '5pm',
+  '6pm',
+  '7pm',
+  '8pm',
+];
 
 
 
@@ -7,49 +26,15 @@ var firstPike = document.getElementById('firstandpike');
 
 var storeOne = {
   name: '1st and Pike',
-  location: '93 Pike St, Seattle, WA 98101',
   min: 23,
   max: 65,
   avg: 6.3,
-  hours: [
-    '6am',
-    '7am',
-    '8am',
-    '9am',
-    '10am',
-    '11am',
-    '12pm',
-    '1pm',
-    '2pm',
-    '3pm',
-    '4pm',
-    '5pm',
-    '6pm',
-    '7pm',
-    '8pm',
-  ]
-
-    rendor: function () {
-   var cookieCount;
-   var cookieTotal;
-
-   for(var i = 0; i < hours.length; i =++) {
-     var liEl = document.createElement('li');
-     cookieCount = storeOne.avg * getRandomNumber (storeOne.min, storeOne.max);
-     liEl.textContent = `${hours[i]}: ${cookieCount} cookies`;
-     cookieTotal += cookieCount;
-    }
-    liEl = document.createElement('li');
-    liEl.textContent = `Total: ${cookieTotal}`;
-    firstPike.appendChid(liEl);
-    
-    console.log(cookieCount);
-    console.log(cookieTotal);
-    
-   return (cookieCount, cookieTotal);
-  }
+  cookieHour: 
 };
 
+
+
+console.log(storeOne);
 
 
 // var seaTac = document.getElementById('seatac');
