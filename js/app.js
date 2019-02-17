@@ -2,7 +2,9 @@
 
 console.log('verify');
 
-hours = [
+// var allStores = [];
+
+var hours = [
   '6am',
   '7am',
   '8am',
@@ -21,7 +23,6 @@ hours = [
 ];
 
 
-
 var firstPike = document.getElementById('firstandpike');
 
 var storeOne = {
@@ -29,57 +30,215 @@ var storeOne = {
   min: 23,
   max: 65,
   avg: 6.3,
-  cookieHour: 
+  hourlyCustomers: [],
+  hourlySales: [],
+  salesEstimate: function () {
+    for (var i = 0; i < hours.length; i++) {
+      var randomCustomers = Math.floor(Math.random() * (this.max - this.min + 1) + this.min);
+      console.log(randomCustomers);
+      this.hourlyCustomers.push(randomCustomers);
+    }
+  },
+
+  salesPerHour: function () {
+    for (var i = 0; i < this.hourlyCustomers.length; i++) {
+      console.log(this.hourlyCustomers);
+      console.log(this.avg);
+      var cookiesPerHour = this.hourlyCustomers[i] * this.avg;
+      console.log(cookiesPerHour);
+      cookiesPerHour = Math.floor(cookiesPerHour);
+      this.hourlySales.push(cookiesPerHour);
+    }
+  },
+
+  rendor: function () {
+    for (var i = 0; i < hours.length; i++) {
+      var liEl = document.createElement('li');
+      liEl.textContent = `${hours[i]}: ${this.hourlySales[i]} cookies`;
+      firstPike.appendChild(liEl);
+    }
+  }
 };
+
+storeOne.salesEstimate();
+storeOne.salesPerHour();
+storeOne.rendor();
+
 
 
 
 console.log(storeOne);
 
 
-// var seaTac = document.getElementById('seatac');
+var seaTac = document.getElementById('seatac');
 
-// var storeTwo = {
-//   name: 'Seatac Airport',
-//   location: '17801 International Blvd, Seattle, WA 98158',
-//   min: 3,
-//   max: 24,
-//   avg: 1.2,
+var storeTwo = {
+  name: 'Seatac Airport',
+  location: '17801 International Blvd, Seattle, WA 98158',
+  min: 3,
+  max: 24,
+  avg: 1.2,
+  hourlyCustomers: [],
+  hourlySales: [],
+  salesEstimate: function () {
+    for (var i = 0; i < hours.length; i++) {
+      var randomCustomers = Math.floor(Math.random() * (this.max - this.min + 1) + this.min);
+      console.log(randomCustomers);
+      this.hourlyCustomers.push(randomCustomers);
+    }
+  },
 
-// };
+  salesPerHour: function () {
+    for (var i = 0; i < this.hourlyCustomers.length; i++) {
+      console.log(this.hourlyCustomers);
+      console.log(this.avg);
+      var cookiesPerHour = this.hourlyCustomers[i] * this.avg;
+      console.log(cookiesPerHour);
+      cookiesPerHour = Math.floor(cookiesPerHour);
+      this.hourlySales.push(cookiesPerHour);
+    }
+  },
 
-// var seaCenter = document.getElementById('seattlecenter');
+  rendor: function () {
+    for (var i = 0; i < hours.length; i++) {
+      var liEl = document.createElement('li');
+      liEl.textContent = `${hours[i]}: ${this.hourlySales[i]} cookies`;
+      seaTac.appendChild(liEl);
+    }
+  } 
+};
 
-// var storeThree = {
-//   name: 'Seattle Center',
-//   location: '305 Harrison St, Seattle, WA 98109',
-//   min: 11,
-//   max: 38,
-//   avg: 3.7,
+storeTwo.salesEstimate();
+storeTwo.salesPerHour();
+storeTwo.rendor();
 
-// };
 
-// var capHill = document.getElementById('capitolhill');
+var seaCenter = document.getElementById('seattlecenter');
 
-// var storeFour = {
-//   name: 'Capitol Hill',
-//   location: '1520 Summit Ave, Seattle, WA 98122',
-//   min: 20,
-//   max: 38,
-//   avg: 2.3,
+var storeThree = {
+  name: 'Seattle Center',
+  location: '305 Harrison St, Seattle, WA 98109',
+  min: 11,
+  max: 38,
+  avg: 3.7,
+  hourlyCustomers: [],
+  hourlySales: [],
+  salesEstimate: function () {
+    for (var i = 0; i < hours.length; i++) {
+      var randomCustomers = Math.floor(Math.random() * (this.max - this.min + 1) + this.min);
+      console.log(randomCustomers);
+      this.hourlyCustomers.push(randomCustomers);
+    }
+  },
 
-// };
+  salesPerHour: function () {
+    for (var i = 0; i < this.hourlyCustomers.length; i++) {
+      console.log(this.hourlyCustomers);
+      console.log(this.avg);
+      var cookiesPerHour = this.hourlyCustomers[i] * this.avg;
+      console.log(cookiesPerHour);
+      cookiesPerHour = Math.floor(cookiesPerHour);
+      this.hourlySales.push(cookiesPerHour);
+    }
+  },
 
-// var alki = document.getElementById('alki');
+  rendor: function () {
+    for (var i = 0; i < hours.length; i++) {
+      var liEl = document.createElement('li');
+      liEl.textContent = `${hours[i]}: ${this.hourlySales[i]} cookies`;
+      seaCenter.appendChild(liEl);
+    }
+  }
+};
 
-// var storeFive = {
-//   name: 'Alki',
-//   location: '2788, 2820 Alki Ave SW, Seattle, WA 98116',
-//   min: 2,
-//   max: 16,
-//   avg: 4.6,
+storeThree.salesEstimate();
+storeThree.salesPerHour();
+storeThree.rendor();
 
-// };
+var capHill = document.getElementById('capitolhill');
+
+var storeFour = {
+  name: 'Capitol Hill',
+  location: '1520 Summit Ave, Seattle, WA 98122',
+  min: 20,
+  max: 38,
+  avg: 2.3,
+  hourlyCustomers: [],
+  hourlySales: [],
+  salesEstimate: function () {
+    for (var i = 0; i < hours.length; i++) {
+      var randomCustomers = Math.floor(Math.random() * (this.max - this.min + 1) + this.min);
+      console.log(randomCustomers);
+      this.hourlyCustomers.push(randomCustomers);
+    }
+  },
+
+  salesPerHour: function () {
+    for (var i = 0; i < this.hourlyCustomers.length; i++) {
+      console.log(this.hourlyCustomers);
+      console.log(this.avg);
+      var cookiesPerHour = this.hourlyCustomers[i] * this.avg;
+      console.log(cookiesPerHour);
+      cookiesPerHour = Math.floor(cookiesPerHour);
+      this.hourlySales.push(cookiesPerHour);
+    }
+  },
+
+  rendor: function () {
+    for (var i = 0; i < hours.length; i++) {
+      var liEl = document.createElement('li');
+      liEl.textContent = `${hours[i]}: ${this.hourlySales[i]} cookies`;
+      capHill.appendChild(liEl);
+    }
+  }
+};
+
+storeFour.salesEstimate();
+storeFour.salesPerHour();
+storeFour.rendor();
+
+var alki = document.getElementById('alki');
+
+var storeFive = {
+  name: 'Alki',
+  location: '2788, 2820 Alki Ave SW, Seattle, WA 98116',
+  min: 2,
+  max: 16,
+  avg: 4.6,
+  hourlyCustomers: [],
+  hourlySales: [],
+  salesEstimate: function () {
+    for (var i = 0; i < hours.length; i++) {
+      var randomCustomers = Math.floor(Math.random() * (this.max - this.min + 1) + this.min);
+      console.log(randomCustomers);
+      this.hourlyCustomers.push(randomCustomers);
+    }
+  },
+
+  salesPerHour: function () {
+    for (var i = 0; i < this.hourlyCustomers.length; i++) {
+      console.log(this.hourlyCustomers);
+      console.log(this.avg);
+      var cookiesPerHour = this.hourlyCustomers[i] * this.avg;
+      console.log(cookiesPerHour);
+      cookiesPerHour = Math.floor(cookiesPerHour);
+      this.hourlySales.push(cookiesPerHour);
+    }
+  },
+
+  rendor: function () {
+    for (var i = 0; i < hours.length; i++) {
+      var liEl = document.createElement('li');
+      liEl.textContent = `${hours[i]}: ${this.hourlySales[i]} cookies`;
+      alki.appendChild(liEl);
+    }
+  }
+};
+
+storeFive.salesEstimate();
+storeFive.salesPerHour();
+storeFive.rendor();
+
 
 
 // function indiStore(store){
